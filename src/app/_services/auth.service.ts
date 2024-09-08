@@ -3,12 +3,8 @@ import { environment } from 'src/environments/environment';
 import { RegisterRequest } from '../_models/requests/register.request';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, map } from 'rxjs';
-import { TokenResponse } from '../_models/response/token.response';
 import { LoginRequest } from '../_models/requests/login.request';
-import { SetPasswordRequest } from '../_models/requests/set-password.request';
 import { AuthUserResponse } from '../_models/response/auth-user.response';
-import { HubConnection, HubConnectionBuilder } from '@microsoft/signalr';
-import { AdminRole, ClientRole } from '../_constants/role.constants';
 
 @Injectable({
   providedIn: 'root'
@@ -20,10 +16,7 @@ export class AuthService {
   authUserObserver = new BehaviorSubject<AuthUserResponse | null>(null);
   authUser$ = this.authUserObserver.asObservable();
 
-  constructor(private httpClient: HttpClient) {
-    this.modeHandler.next(ClientRole);
-  }
-
+  constructor(private httpClient: HttpClient) {}
 
   setToken(authUserResponse: AuthUserResponse) {
     let stringVal = JSON.stringify(authUserResponse);
@@ -57,9 +50,6 @@ export class AuthService {
     }))
   }
 
-
-
-
   logOutUser() {
     this.removeToken();
   }
@@ -67,7 +57,6 @@ export class AuthService {
     let authUserObject = localStorage.getItem('auth-user')
     if (authUserObject) {
       let authUserResponse: AuthUserResponse = JSON.parse(authUserObject);
-      console.log({ authUserResponse })
       this.authUserObserver.next(authUserResponse);
     }
   }

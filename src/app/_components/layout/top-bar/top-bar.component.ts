@@ -12,9 +12,5 @@ export class TopBarComponent {
     // Check for previously saved theme
     
   }
-
-  
-
-
  
 }
