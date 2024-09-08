@@ -1,0 +1,14 @@
+<div *ngIf="card" class="px-4 " style="width: 220px;">
+    <div [class]="(getStyle(card.name).backgroundColor)+' bg-gradient-to-bl to-gray-800 rounded-xl p-4 shadow-md'">
+        <div class="flex justify-between">
+            <img [src]="'assets/cards/'+(getStyle(card.name).imageName)+'.png'" class="w-12 h-4 object-contain">
+            <button class="text-gray-400">
+                <svg xmlns="http://www.w3.org/2000/svg" width="4" height="14" fill="none" viewBox="0 0 4 14"><path stroke="#999" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M1.75 1.75v.008M1.75 7v.008m0 5.242v.008m0-9.758a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5m0 5.25a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5m0 5.25a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5"></path></svg>
+            </button>
+        </div>
+        <div class="mt-4">
+            <p class="text-md text-white font-semibold">{{card.name}}</p>
+            <p class="text-xs text-gray-300">Debit:{{card.debitNumber}}</p>
+        </div>
+    </div>
+</div>

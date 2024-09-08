@@ -1,0 +1,34 @@
+<div *ngIf="true">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+    <app-balance-section [label]="'Total Balance'" [amount]="totalBalance"></app-balance-section>
+    <app-balance-section [label]="'Crypto'" [amount]="cryptoBalance"></app-balance-section>
+    <app-balance-section [label]="'Fiat'" [amount]="fiatBalance"></app-balance-section>
+
+</div>
+
+<div *ngIf="true">
+    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+    <app-crypto-balance [cryptoName]="balance.name" [totalBalance]="balance.totalBalance" *ngFor="let balance of crypto_balance"></app-crypto-balance>
+
+
+</div>
+
+<div class="grid mt-10  grid-cols-2 sm:grid-cols-9    gap-5">
+    <div class="sm:col-span-3 col-span-2 overlay-color  relative rounded-md">
+        <app-exchange></app-exchange>
+    </div>
+
+    <div *ngFor="let info of crypto_infos;let i=index" [ngClass]="'h-full sm:col-span-3'">
+        <app-chart-box [info]="info"></app-chart-box>
+    </div>
+   
+
+
+</div>
+
+<app-carousel [account_cards]="account_cards" ></app-carousel>
+</div>
+
+<app-transactions [transactions]="transactions">
+    
+</app-transactions>

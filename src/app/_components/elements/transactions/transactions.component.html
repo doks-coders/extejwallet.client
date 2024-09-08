@@ -1,0 +1,70 @@
+<div class=" mx-auto" style="overflow-x: auto;min-width: 300px" >
+    <table  class="w-full shadow-lg">
+      <thead>
+        <tr class="overlay-color">
+          <th class="py-3 px-6 text-left cursor-pointer" (click)="sortTable('cryptoName')">
+            <div class="flex items-center justify-between">
+              <span>Token</span>
+              <span class="ml-1">{{'⬍' }}</span>
+            </div>
+          </th>
+          <th class="py-3 px-6 text-left cursor-pointer" (click)="sortTable('status')">
+            <div class="flex items-center justify-between">
+              <span>Status</span>
+              <span class="ml-1">{{'⬍' }}</span>
+            </div>
+          </th>
+          <th class="py-3 px-6 text-left cursor-pointer" (click)="sortTable('transactionLink')">
+            <div class="flex items-center justify-between">
+              <span class="text-nowrap">Transaction Link</span>
+              <span class="ml-1">{{'⬍' }}</span>
+            </div>
+          </th>
+          <th class="py-3 px-6 text-left cursor-pointer" (click)="sortTable('amount')">
+            <div class="flex items-center justify-between">
+              <span >Status</span>
+             
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of transactions" class="overlay-color">
+          <td class="py-3 px-6 flex items-center">
+            <div class="w-10 mr-2">
+              <app-bitcoin-icon *ngIf="item.cryptoName=='Bitcoin'"></app-bitcoin-icon>
+            <app-ethereum-icon *ngIf="item.cryptoName=='Ethereum'"></app-ethereum-icon>
+            <app-binance-icon *ngIf="item.cryptoName=='Binance Coin'"></app-binance-icon>
+            <app-usd-icon *ngIf="item.cryptoName=='USD Coin'"></app-usd-icon >
+            </div>
+          
+            <div>
+              <h4 class="text-sm text-nowrap">{{item.cryptoName}}</h4>
+              <h5 class="text-xs text-gray-500 text-nowrap">{{item.created|date:'medium'}}</h5>
+            </div>
+          </td>
+          <td class="py-3 px-6 text-blue-500">{{item.status}}</td>
+          <td class="py-3 px-6 text-blue-500">{{item.transactionLink}}</td> <!--7jdksjd...lre-->
+          <td class="py-3 px-6">
+            <h4 [class]="'text-sm '+(item.status=='Sent'?'text-pink-600':'text-green-400')">{{(item.status=='Sent'?'-':'+')}}{{item.amount | currency:'USD':'symbol':'1.2-2'}}</h4>
+            <div style="font-size: x-small;" class="flex mt-1 items-center  space-x-3">
+              <span class="px-1 span-section">
+                24h
+              </span>
+              <span [class]="(item._24hrRate>0?' text-green-400':' text-red-400')">
+                {{item._24hrRate.toFixed(2)}}%
+              </span>
+
+              <span [class]="'px-1 span-section'">
+                7h
+              </span>
+              <span [class]="(item._7hrRate>0?'text-green-400':'text-red-400')">
+                {{item._7hrRate.toFixed(2)}}%
+              </span>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

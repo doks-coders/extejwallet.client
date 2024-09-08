@@ -1,0 +1,38 @@
+
+
+.button-hover:hover {
+    background: linear-gradient(180deg, #73a8f8 0%, #3a57e8 100%);
+  }
+
+  @keyframes rotateArrow {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(90deg);
+    }
+    100% {
+      transform: rotate(180deg);
+    }
+  }
+  
+  @keyframes rotateArrowBack {
+    0% {
+      transform: rotate(180deg);
+    }
+    50% {
+      transform: rotate(90deg);
+    }
+    100% {
+      transform: rotate(0deg);
+    }
+  }
+  
+  /* Add these classes to apply the animation */
+  .rotate-to-180 {
+    animation: rotateArrow 0.3s ease-in-out forwards;
+  }
+  
+  .rotate-to-0 {
+    animation: rotateArrowBack 0.3s ease-in-out forwards;
+  }

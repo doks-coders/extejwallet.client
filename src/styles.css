@@ -1,0 +1,74 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* styles.css */
+
+/* Light mode (default) */
+/* Light mode (default) */
+/* Define default light mode variables */
+:root {
+  --background-color: rgba(233, 237, 247, .95);
+  --text-color: rgb(54, 52, 52);
+  --overlay-background: #ffffff;
+  --span-div:rgb(241, 241, 241);
+}
+
+/* Define dark mode variables */
+.dark-mode {
+  --background-color: #0d0d1f;
+  --text-color: white;
+  --overlay-background: #151429;
+  --span-div:#090915;
+}
+
+/* Apply the variables to the body */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* You can use the variables for other elements */
+.span-section{
+  background-color: var(--span-div);
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+.overlay-color {
+  background-color: var(--overlay-background);
+  color: var(--text-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* For Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.button-gradient {
+  background: linear-gradient(180deg, #73a8f8 0%, #3a57e8 100%);
+}
+
+.sidebar:hover .label {
+  opacity: 1;
+  width: auto;
+}
+
+.gradient-bg-hover{
+  transition-delay: 1000ms;
+  transition: ease;
+}
+.gradient-bg-hover:hover {
+  background: linear-gradient(180deg, #3a57e8 0%, #73a8f8 100%);
+}
+.gradient-bg-active{
+  background: linear-gradient(180deg, #3a57e8 0%, #73a8f8 100%);
+}

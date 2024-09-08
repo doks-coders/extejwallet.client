@@ -1,0 +1,44 @@
+<div #container class="relative background py-5 my-3 overlay-color ">
+    <div class="px-3 rounded-lg relative top-0 w-full h-full z-10">
+        <div class="flex justify-between mb-4 items-center">
+            <h5>Accounts and Cards</h5>
+
+            <div class="flex space-x-2 ">
+          
+                <button (click)="prev()" class="shadow-lg p-2 cursor-pointer rounded-md border"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" fill="none" viewBox="0 0 7 12"><path fill="#9BAECA" fill-rule="evenodd" d="m2.414 6 4.293 4.293a1 1 0 1 1-1.414 1.414l-5-5a1 1 0 0 1 0-1.414l5-5a1 1 0 0 1 1.414 1.414z" class="svg-color-fill-primary" clip-rule="evenodd"></path></svg></button>
+                
+                <button (click)="next()" class="shadow-lg p-2 cursor-pointer rounded-md border"><svg xmlns="http://www.w3.org/2000/svg" width="7" height="12" fill="none" viewBox="0 0 7 12"><path fill="#9BAECA" fill-rule="evenodd" d="M4.586 6 .293 10.293a1 1 0 1 0 1.414 1.414l5-5a1 1 0 0 0 0-1.414l-5-5A1 1 0 0 0 .293 1.707z" class="svg-color-fill-primary" clip-rule="evenodd"></path></svg></button>
+            </div>
+
+
+        </div>
+        
+        <div  class="relative   w-full  overflow-hidden">
+            <div class="flex"
+                [ngStyle]="{'transform': 'translateX(' + currentTranslateX + 'px)', 'transition': 'transform 0.5s ease'}">
+                <app-card-item [card]="item" *ngFor="let item of account_cards"></app-card-item>
+            </div>
+        </div>
+
+        <div class="mt-10 w-full border text-blue-500 border-blue-500 border-dashed py-2 rounded-md flex items-center justify-center">
+<span>+ Add Payment Method</span>
+        </div>
+    </div>
+ <div class="absolute  rounded-md  top-0 w-full h-full z-0  "></div>
+
+   
+
+</div>
+
+<!--
+ <div (click)="prev()"
+        style="left: 0;bottom: 50%;"
+            [class]="'cursor-pointer mx-3 sm:mx-10 absolute   p-2 flex items-center justify-center   text-white  rounded-full  '+(currentIndex==0?'bg-gray-200':'bg-gray-800')">
+            <i class="fa fa-arrow-left"></i>
+        </div>
+        <div (click)="next()"
+        style="right: 0;bottom: 50%;"
+            [class]="'cursor-pointer absolute mx-3 sm:mx-10  p-2 flex items-center justify-center text-white rounded-full '+((currentIndex+1)==numItems?'bg-gray-200':'bg-gray-800')">
+            <i class="fa fa-arrow-right"></i>
+        </div>
+-->

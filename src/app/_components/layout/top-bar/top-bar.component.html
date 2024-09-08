@@ -1,0 +1,46 @@
+<div class="fixed w-full top-0 left-0 overlay-color px-4 py-3 flex justify-between items-center shadow-lg z-30">
+    
+    <!-- Logo -->
+    <div class="text-lg font-bold">
+      <a href="#" class="sm:hidden flex items-center">
+       <img width="50px" src="assets/logos/logo.svg">
+       <span class="text-3xl font-bold label ml-4   opacity-100 w-auto transition-all duration-300">Extej</span>
+      
+      </a>
+      
+    </div>
+    <!-- Search Input (Only visible on desktop) -->
+    <div class="hidden sm:ml-20 sm:flex flex-grow items-center mx-4 relative">
+      <input type="text" placeholder="Search..." class="w-full span-section rounded-lg pl-10 pr-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-600 dark:focus:ring-blue-400">
+      <i class="fa fa-search absolute left-3 top-2.5 "></i>
+    </div>
+  
+    <!-- Icons and Light/Dark Mode Toggle -->
+    <div class="hidden sm:flex items-center space-x-4">
+      <!-- Notification Button -->
+      <button class="relative">
+        <app-notification-icon></app-notification-icon>
+      </button>
+  
+      <!-- Message Button -->
+      <button class="relative">
+       <app-message></app-message>
+      </button>
+      <div class="flex items-center">
+        <img src="assets/user.png" class="mr-4">
+
+        <div class="space-y-0">
+            <h4>Austin Robertson</h4>
+            <h5 class="text-sm">Marketing Director</h5>
+        </div>
+      </div>
+  
+      <!-- Light/Dark Mode Toggle Switch -->
+      <app-toggle-darkness></app-toggle-darkness>
+    </div>
+
+    <button (click)="actionService.displaySideBar(true)" class="block sm:hidden px-2 rounded-md py-1 overlay-color">
+      <i class="fa fa-bars"></i>
+    </button>
+  </div>
+  

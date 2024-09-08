@@ -1,0 +1,32 @@
+<button *ngIf="false" id="toggleSidebar" class="hidden sm:block absolute top-4 left-4 px-4 py-2 bg-blue-500 text-white rounded-lg z-50">
+    Toggle Sidebar Position
+  </button>
+
+  <!-- Sidebar -->
+  <div id="sidebar" class="space-y-3 overlay-color sidebar fixed group h-screen w-16 hover:w-48  flex flex-col transition-all duration-300 ease-in-out z-40 hidden sm:block">
+    
+  
+   <a href="#" class="mx-2 flex items-center  mb-4 mt-2">
+    <img src="assets/logos/logo.svg" width="50px">
+    <span class="text-3xl  font-bold label ml-4 opacity-0 w-0   group-hover:opacity-100 group-hover:w-auto transition-all duration-300">Extej</span>
+  </a>
+    <a  routerLinkActive="gradient-bg-active text-white" routerLink="/" class="mx-3 p-3 hover:text-white  flex items-center group-hover:justify-start justify-center gradient-bg-hover hover:bg-opacity-70  transition-all duration-200 rounded-[10px]">
+      <i class="fa fa-home text-center"></i>
+      <span class="hidden group-hover:block label ml-4 opacity-0 w-0  overflow-hidden group-hover:opacity-100 group-hover:w-auto transition-all duration-300">Wallet</span>
+    </a>
+    <a  routerLinkActive="gradient-bg-active text-white" routerLink="/settings" class="mx-3 p-3 hover:text-white  flex items-center group-hover:justify-start justify-center   gradient-bg-hover hover:bg-opacity-70  transition-all duration-200 rounded-[10px]">
+      <i class="fa fa-gears text-center"></i>
+      <span class="hidden group-hover:block label ml-4 opacity-0 w-0  overflow-hidden group-hover:opacity-100 group-hover:w-auto transition-all duration-300">Settings</span>
+    </a>
+    <a  routerLinkActive="gradient-bg-active text-white" routerLink="/user" class="mx-3 p-3 hover:text-white  flex items-center group-hover:justify-start justify-center   gradient-bg-hover hover:bg-opacity-70  transition-all duration-200 rounded-[10px]">
+      <i class="fa fa-user text-center"></i>
+      <span class="hidden group-hover:block label ml-4 opacity-0 w-0  overflow-hidden group-hover:opacity-100 group-hover:w-auto transition-all duration-300">Users</span>
+    </a>
+    <a  routerLinkActive="gradient-bg-active text-white" routerLink="/exit" class="mx-3 p-3 hover:text-white  flex items-center group-hover:justify-start justify-center   gradient-bg-hover hover:bg-opacity-70  transition-all duration-200 rounded-[10px]">
+      <i class="fa fa-close text-center"></i>
+      <span class="hidden group-hover:block label ml-4 opacity-0 w-0  overflow-hidden group-hover:opacity-100 group-hover:w-auto transition-all duration-300">Exit</span>
+    </a>
+  
+  </div>
+
+ 
